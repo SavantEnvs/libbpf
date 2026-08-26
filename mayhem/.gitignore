@@ -1,0 +1,5 @@
+# Build trees written by mayhem/build.sh. Ignored so `git clean -ffdX` (run by the patch grader
+# before every build) removes them; otherwise stale objects survive and a header-only fix is never
+# recompiled, because src/Makefile tracks no header dependencies.
+/build-fuzz/
+/build-test/

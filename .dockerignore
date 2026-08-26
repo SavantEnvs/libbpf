@@ -1,0 +1,20 @@
+# .dockerignore for the commit-image build.
+# Goal: bake in the FULL repo (including .git history — the grader uses it),
+# dropping only local build artifacts and editor/OS cruft.
+#
+# NOTE: no `*.o` / `*.a` globs here — mayhem/bpf-object-fuzzer/testsuite/ ships a
+# real BPF object (minimal.bpf.o) as its seed corpus, and upstream keeps no
+# prebuilt objects in-tree, so a sweeping object glob would only drop seeds.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+build/
+out/
+build-fuzz/
+build-test/
+elfutils/
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~
